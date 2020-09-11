@@ -1,0 +1,34 @@
+# ------------------------------ common ------------------------------
+IMAGE_SIZE: 224
+CLASS_NUM: 14
+GPU: True
+# --------------------------------------------------------------------
+
+# ------------------------------ train config ------------------------------
+TRAIN_DATA_DIR: /media/cyg/DATA1/DataSet/classifier/dataset/train/
+MODEL_DIR: ./models/
+
+EPOCHS: 100
+BATCH_SIZE: 2
+
+LEARNING_RATE: 0.001
+
+LR_REDUCE_PATIENCE: 5   # 需要降低学习率的训练步长
+EARLY_STOP_PATIENCE: 5  # 提前终止训练的步长
+
+IS_AUGMENTATION: True
+MONITOR: val_acc
+RAT: 0.1  # if cut,img[slice(h*self.rat,h-h*self.rat),slice(w*self.rat,w-w*self.rat)]
+# --------------------------------------------------------------------------
+
+# ------------------------------- test config -------------------------------
+TEST_BATCHSIZE: 1
+
+MODEL_PATH: ./models/model_30_0.005101.pkl
+
+TEST_IMAGE_DIR: dataset/test
+
+TEST_RESULT_DIR: ./output/
+
+SCORE_DIFF_THRESH: 0.99
+# ---------------------------------------------------------------------------
