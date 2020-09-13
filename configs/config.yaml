@@ -1,0 +1,24 @@
+# ------------------------------------------- system -------------------------------------------
+SYSTEM:
+    GPU: True
+    CPU_WORKERS: 12
+# ----------------------------------------------------------------------------------------------
+DATASETS:
+    TRAIN_DATA_DIR: /media/maxin/D6788EEA788EC927/数据集/手写字符分类/train/
+    TEST_DATA_DIR:  /media/maxin/D6788EEA788EC927/数据集/手写字符分类/test/
+    TRAIN_CSV_FILE: data/train.csv
+    TEST_CSV_FILE:  data/test.csv
+    LABEL_FILE_PATH: ./label_name.txt
+
+# ------------------------------------------- train -------------------------------------------
+MODEL:
+    PRE_MODEL_NAME: senet154    # [inception_v4, resnext_64, senet154, se_resnet101, se_resnet50]
+    LABEL_NUM: 14
+    BATCH_SIZE: 2
+    STAGE_EPOCHS: [10, 5, 5]  # epoch数量，分stage进行，跑完一个stage后降低学习率进入下一个stage
+    LR: 0.0001  # 初始学习率
+    LR_DECAY: 5  # 学习率衰减系数 (new_lr = lr / lr_decay)
+    WEIGHT_DECAY: 0.0001  # 正则化系数
+    RESUME: True    # 是否从断点继续跑
+
+# ---------------------------------------------------------------------------------------------
