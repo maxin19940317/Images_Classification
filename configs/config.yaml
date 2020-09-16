@@ -1,0 +1,33 @@
+# ------------------------------ common ------------------------------
+IMAGE_SIZE: 224
+CLASS_NUM: 14
+# --------------------------------------------------------------------
+
+# ------------------------------ train config ------------------------------
+DATASETS:
+    TRAIN_DATA_DIR: /media/cyg/DATA1/DataSet/classifier/dataset/train/
+    TEST_DATA_DIR:  /media/cyg/DATA1/DataSet/classifier/dataset/test/
+    TRAIN_CSV_FILE: data/train.csv
+    TEST_CSV_FILE:  data/test.csv
+    LABEL_FILE_PATH: ./label_name.txt
+# --------------------------------------------------------------------------
+
+# ------------------------------ train config ------------------------------
+TRAIN_DATA_DIR: /media/cyg/DATA1/DataSet/classifier/dataset/train/
+MODEL_DIR: ./models/
+
+EPOCHS: 100
+BATCH_SIZE: 8
+
+LEARNING_RATE: 0.0001
+
+LR_REDUCE_PATIENCE: 5   # 需要降低学习率的训练步长
+EARLY_STOP_PATIENCE: 5  # 提前终止训练的步长
+
+IS_AUGMENTATION: True
+MONITOR: val_loss
+# --------------------------------------------------------------------------
+
+# ------------------------------- test config -------------------------------
+MODEL_PATH: ./models/model_30_0.005101.pkl
+# ---------------------------------------------------------------------------
