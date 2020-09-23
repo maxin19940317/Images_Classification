@@ -9,11 +9,9 @@ DATASETS:
     TEST_DATA_DIR:  /media/cyg/DATA1/DataSet/classifier/dataset/test/
     TRAIN_CSV_FILE: data/train.csv
     TEST_CSV_FILE:  data/test.csv
-    LABEL_FILE_PATH: ./label_name.txt
 # --------------------------------------------------------------------------
 
-# ------------------------------ train config ------------------------------
-TRAIN_DATA_DIR: /media/cyg/DATA1/DataSet/classifier/dataset/train/
+# ------------------------------ model config ------------------------------
 MODEL_DIR: ./models/
 
 EPOCHS: 100
