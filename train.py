@@ -25,7 +25,7 @@ class Model(object):
     构建Model类
     """
     def __init__(self, config):
-        self.train_images_dir = config['TRAIN_DATA_DIR']
+        self.train_images_dir = config['DATASETS']['TRAIN_DATA_DIR']
         self.checkpoints = config['MODEL_DIR']
         self.im_size = config['IMAGE_SIZE']
         self.epochs = config['EPOCHS']
